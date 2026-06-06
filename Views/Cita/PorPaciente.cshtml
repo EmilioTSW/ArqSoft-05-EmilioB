@@ -1,40 +1,70 @@
 ﻿@model List<CitasApp.Models.Cita>
 
-<h1>Agenda completa de citas</h1>
+<div class="container mt-4">
 
-<div style="margin-bottom: 20px;">
-    <a href="/Paciente" class="btn btn-primary">Pacientes</a>
-    <a href="/Medico" class="btn btn-success">Médicos</a>
-    <a href="/Cita" class="btn btn-warning">Citas</a>
+    <h2 class="text-center mb-4">Agenda General de Citas</h2>
+
+    <div class="mb-3">
+        <a href="/Paciente" class="btn btn-outline-primary">Pacientes</a>
+        <a href="/Medico" class="btn btn-outline-success">Médicos</a>
+        <a href="/Cita" class="btn btn-outline-warning">Citas</a>
+        <a href="/Cita/Crear" class="btn btn-success float-end">
+            Nueva Cita
+        </a>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            Listado de Citas Registradas
+        </div>
+
+        <div class="card-body">
+
+            <table class="table table-hover table-bordered align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>ID</th>
+                        <th>Paciente</th>
+                        <th>Médico</th>
+                        <th>Fecha</th>
+                        <th>Hora</th>
+                        <th>Motivo</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var cita in Model)
+                    {
+                        <tr>
+                            <td>@cita.Id</td>
+                            <td>@cita.PacienteId</td>
+                            <td>@cita.MedicoId</td>
+                            <td>@cita.Fecha</td>
+                            <td>@cita.Hora</td>
+                            <td>@cita.Motivo</td>
+
+                            <td>
+                                @if (cita.Estado == "Confirmada")
+                                {
+                                    <span class="badge bg-success">Confirmada</span>
+                                }
+                                else if (cita.Estado == "Pendiente")
+                                {
+                                    <span class="badge bg-warning text-dark">Pendiente</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-danger">Cancelada</span>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+
 </div>
-<a href="/Cita/Crear" class="btn btn-success mb-3">
-    Crear cita
-</a>
-<table class="table table-bordered table-striped">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>PacienteId</th>
-            <th>MedicoId</th>
-            <th>Fecha</th>
-            <th>Hora</th>
-            <th>Motivo</th>
-            <th>Estado</th>
-        </tr>
-    </thead>
-
-    <tbody>
-        @foreach (var cita in Model)
-        {
-            <tr>
-                <td>@cita.Id</td>
-                <td>@cita.PacienteId</td>
-                <td>@cita.MedicoId</td>
-                <td>@cita.Fecha</td>
-                <td>@cita.Hora</td>
-                <td>@cita.Motivo</td>
-                <td>@cita.Estado</td>
-            </tr>
-        }
-    </tbody>
-</table>

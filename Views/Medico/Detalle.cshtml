@@ -1,23 +1,60 @@
 ﻿@model CitasApp.Models.Medico
 
-<h1>Detalle del médico</h1>
+<div class="container mt-4">
 
-<div style="margin-bottom: 20px;">
-    <a href="/Paciente" class="btn btn-primary">Pacientes</a>
-    <a href="/Medico" class="btn btn-success">Médicos</a>
-    <a href="/Cita" class="btn btn-warning">Citas</a>
-</div>
+    <h2 class="mb-4">Información del Médico</h2>
 
-<div class="card">
-    <div class="card-body">
-        <p><strong>Id:</strong> @Model.Id</p>
-        <p><strong>Nombre:</strong> @Model.Nombre</p>
-        <p><strong>Apellido:</strong> @Model.Apellido</p>
-        <p><strong>Especialidad:</strong> @Model.Especialidad</p>
-        <p><strong>Número de licencia:</strong> @Model.NumeroLicencia</p>
+    <div class="mb-3">
+        <a href="/Paciente" class="btn btn-outline-primary">Pacientes</a>
+        <a href="/Medico" class="btn btn-outline-success">Médicos</a>
+        <a href="/Cita" class="btn btn-outline-warning">Citas</a>
     </div>
+
+    <div class="card shadow">
+
+        <div class="card-header bg-success text-white">
+            Datos del Médico
+        </div>
+
+        <div class="card-body">
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <strong>ID:</strong>
+                    <p>@Model.Id</p>
+                </div>
+
+                <div class="col-md-6">
+                    <strong>Nombre:</strong>
+                    <p>@Model.Nombre</p>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <strong>Apellido:</strong>
+                    <p>@Model.Apellido</p>
+                </div>
+
+                <div class="col-md-6">
+                    <strong>Especialidad:</strong>
+                    <p>@Model.Especialidad</p>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <strong>Número de Licencia:</strong>
+                <p>@Model.NumeroLicencia</p>
+            </div>
+
+        </div>
+
+        <div class="card-footer">
+            <a href="/Medico" class="btn btn-secondary">
+                Regresar
+            </a>
+        </div>
+
+    </div>
+
 </div>
-
-<br />
-
-<a href="/Medico" class="btn btn-secondary">Volver</a>

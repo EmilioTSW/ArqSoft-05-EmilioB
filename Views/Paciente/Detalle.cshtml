@@ -1,27 +1,71 @@
 ﻿@model CitasApp.Models.Paciente
 
-<h1>Detalle del paciente</h1>
+<div class="container mt-4">
 
-<div style="margin-bottom: 20px;">
-    <a href="/Paciente" class="btn btn-primary">Pacientes</a>
-    <a href="/Medico" class="btn btn-success">Médicos</a>
-    <a href="/Cita" class="btn btn-warning">Citas</a>
-</div>
+    <h2 class="mb-4">Información del Paciente</h2>
 
-<div class="card">
-    <div class="card-body">
-        <p><strong>Id:</strong> @Model.Id</p>
-        <p><strong>Nombre:</strong> @Model.Nombre</p>
-        <p><strong>Apellido:</strong> @Model.Apellido</p>
-        <p><strong>Email:</strong> @Model.Email</p>
-        <p><strong>Teléfono:</strong> @Model.Telefono</p>
+    <div class="mb-3">
+        <a href="/Paciente" class="btn btn-outline-primary">Pacientes</a>
+        <a href="/Medico" class="btn btn-outline-success">Médicos</a>
+        <a href="/Cita" class="btn btn-outline-warning">Citas</a>
     </div>
+
+    <div class="card shadow">
+
+        <div class="card-header bg-primary text-white">
+            Datos del Paciente
+        </div>
+
+        <div class="card-body">
+
+            <div class="row mb-3">
+
+                <div class="col-md-6">
+                    <strong>ID:</strong>
+                    <p>@Model.Id</p>
+                </div>
+
+                <div class="col-md-6">
+                    <strong>Nombre:</strong>
+                    <p>@Model.Nombre</p>
+                </div>
+
+            </div>
+
+            <div class="row mb-3">
+
+                <div class="col-md-6">
+                    <strong>Apellido:</strong>
+                    <p>@Model.Apellido</p>
+                </div>
+
+                <div class="col-md-6">
+                    <strong>Correo Electrónico:</strong>
+                    <p>@Model.Email</p>
+                </div>
+
+            </div>
+
+            <div class="mb-3">
+                <strong>Teléfono:</strong>
+                <p>@Model.Telefono</p>
+            </div>
+
+        </div>
+
+        <div class="card-footer d-flex gap-2">
+
+            <a href="/Paciente" class="btn btn-secondary">
+                Regresar
+            </a>
+
+            <a href="/Cita/PorPaciente?pacienteId=@Model.Id"
+               class="btn btn-warning">
+                Ver Citas
+            </a>
+
+        </div>
+
+    </div>
+
 </div>
-
-<br />
-
-<a href="/Paciente" class="btn btn-secondary">Volver</a>
-
-<a href="/Cita/PorPaciente?pacienteId=@Model.Id" class="btn btn-warning">
-    Ver citas de este paciente
-</a>

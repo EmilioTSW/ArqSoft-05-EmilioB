@@ -1,48 +1,74 @@
 ﻿@model List<CitasApp.Models.Paciente>
 
-<h1>Pacientes registrados</h1>
+<div class="container mt-4">
 
-<div style="margin-bottom: 20px;">
-    <a href="/Paciente" class="btn btn-primary">Pacientes</a>
-    <a href="/Medico" class="btn btn-success">Médicos</a>
-    <a href="/Cita" class="btn btn-warning">Citas</a>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Pacientes Registrados</h2>
+
+        <a href="/Paciente/Crear" class="btn btn-primary">
+            Agregar Paciente
+        </a>
+    </div>
+
+    <div class="mb-4">
+        <a href="/Paciente" class="btn btn-outline-primary">Pacientes</a>
+        <a href="/Medico" class="btn btn-outline-success">Médicos</a>
+        <a href="/Cita" class="btn btn-outline-warning">Citas</a>
+    </div>
+
+    <div class="card shadow">
+
+        <div class="card-header bg-primary text-white">
+            Lista de Pacientes
+        </div>
+
+        <div class="card-body">
+
+            <table class="table table-hover table-striped align-middle">
+
+                <thead class="table-light">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Correo</th>
+                        <th>Teléfono</th>
+                        <th>Detalle</th>
+                        <th>Citas</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var paciente in Model)
+                    {
+                        <tr>
+                            <td>@paciente.Id</td>
+                            <td>@paciente.Nombre</td>
+                            <td>@paciente.Apellido</td>
+                            <td>@paciente.Email</td>
+                            <td>@paciente.Telefono</td>
+
+                            <td>
+                                <a href="/Paciente/Detalle/@paciente.Id"
+                                   class="btn btn-info btn-sm text-white">
+                                    Ver Detalle
+                                </a>
+                            </td>
+
+                            <td>
+                                <a href="/Cita/PorPaciente?pacienteId=@paciente.Id"
+                                   class="btn btn-secondary btn-sm">
+                                    Ver Citas
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
 </div>
-<a href="/Paciente/Crear" class="btn btn-success mb-3">
-    Agregar paciente
-</a>
-<table class="table table-bordered table-striped">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Email</th>
-            <th>Teléfono</th>
-            <th>Detalle</th>
-            <th>Citas</th>
-        </tr>
-    </thead>
-
-    <tbody>
-        @foreach (var paciente in Model)
-        {
-            <tr>
-                <td>@paciente.Id</td>
-                <td>@paciente.Nombre</td>
-                <td>@paciente.Apellido</td>
-                <td>@paciente.Email</td>
-                <td>@paciente.Telefono</td>
-                <td>
-                    <a href="/Paciente/Detalle/@paciente.Id" class="btn btn-info">
-                        Ver detalle
-                    </a>
-                </td>
-                <td>
-                    <a href="/Cita/PorPaciente?pacienteId=@paciente.Id" class="btn btn-secondary">
-                        Ver citas
-                    </a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
