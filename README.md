@@ -136,34 +136,6 @@ Esto mejora la experiencia del usuario y evita la necesidad de escribir rutas ma
 
 ---
 
-## Capturas de Pantalla
-
-### Lista de Pacientes
-
-```text
-wwwroot/img/pacientes.png
-```
-
-### Lista de Médicos
-
-```text
-wwwroot/img/medicos.png
-```
-
-### Agenda de Citas
-
-```text
-wwwroot/img/citas.png
-```
-
-### Registro de Nueva Cita
-
-```text
-wwwroot/img/crear-cita.png
-```
-
----
-
 ## Instrucciones de Ejecución
 
 1. Abrir la solución en Visual Studio.
