@@ -1,6 +1,37 @@
-﻿namespace Citas_App.Data
-{
-    public class medicos
-    {
-    }
-}
+﻿[
+  {
+    "Id": "M1",
+    "Nombre": "Carlos",
+    "Apellido": "Ramírez",
+    "Especialidad": "Neurología",
+    "NumeroLicencia": "LIC-2001"
+  },
+  {
+    "Id": "M2",
+    "Nombre": "Ana",
+    "Apellido": "González",
+    "Especialidad": "Ginecología",
+    "NumeroLicencia": "LIC-2002"
+  },
+  {
+    "Id": "M3",
+    "Nombre": "Luis",
+    "Apellido": "Torres",
+    "Especialidad": "Traumatología",
+    "NumeroLicencia": "LIC-2003"
+  },
+  {
+    "Id": "M4",
+    "Nombre": "María",
+    "Apellido": "Vargas",
+    "Especialidad": "Oftalmología",
+    "NumeroLicencia": "LIC-2004"
+  },
+  {
+    "Id": "M5",
+    "Nombre": "José",
+    "Apellido": "Martínez",
+    "Especialidad": "Pediatría",
+    "NumeroLicencia": "LIC-2005"
+  }
+]

@@ -1,6 +1,37 @@
-﻿namespace Citas_App.Data
-{
-    public class pacientes
-    {
-    }
-}
+﻿[
+  {
+    "Id": "P1",
+    "Nombre": "Javier",
+    "Apellido": "Morales",
+    "Email": "javier.morales@gmail.com",
+    "Telefono": "9992345678"
+  },
+  {
+    "Id": "P2",
+    "Nombre": "Sofía",
+    "Apellido": "Navarro",
+    "Email": "sofia.navarro@gmail.com",
+    "Telefono": "9998765432"
+  },
+  {
+    "Id": "P3",
+    "Nombre": "Diego",
+    "Apellido": "Castro",
+    "Email": "diego.castro@gmail.com",
+    "Telefono": "9993456789"
+  },
+  {
+    "Id": "P4",
+    "Nombre": "Valeria",
+    "Apellido": "Reyes",
+    "Email": "valeria.reyes@gmail.com",
+    "Telefono": "9994567890"
+  },
+  {
+    "Id": "P5",
+    "Nombre": "Andrés",
+    "Apellido": "Herrera",
+    "Email": "andres.herrera@gmail.com",
+    "Telefono": "9995678901"
+  }
+]
