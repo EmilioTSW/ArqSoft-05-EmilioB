@@ -1,4 +1,4 @@
-﻿using Citas_App.Models;
+﻿using CitasApp.Models;
 
 using CitasApp.Services;
 using Microsoft.AspNetCore.Mvc;
